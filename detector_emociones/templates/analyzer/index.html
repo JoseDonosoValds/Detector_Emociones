@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analizador de Emociones</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <button class="menu-btn">☰</button>
+            <img src="{% static 'img/logo.png' %}" alt="Logo" class="logo">
+        </header>
+
+        <main>
+            <div class="analyzer-section">
+                <h2>Analizar texto</h2>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><img src="{% static 'img/instagram.png' %}" alt="Instagram"></a>
+                    <a href="#" class="social-icon"><img src="{% static 'img/facebook.png' %}" alt="Facebook"></a>
+                    <a href="#" class="social-icon"><img src="{% static 'img/reddit.png' %}" alt="Reddit"></a>
+                    <a href="#" class="social-icon"><img src="{% static 'img/twitter.png' %}" alt="Twitter"></a>
+                </div>
+
+                <div class="text-input-container">
+                    <textarea id="text-input" maxlength="5000" placeholder="Ingrese el texto a analizar..."></textarea>
+                    <div class="char-counter">0/5.000</div>
+                </div>
+            </div>
+
+            <div class="results-section">
+                <h2>Resultado del análisis</h2>
+                <div class="emotions-results">
+                    <div class="emotion-item">
+                        <span>RED SOCIAL:</span>
+                        <span class="emotion-value" id="red-social"></span>
+                    </div>
+                    <div class="emotion-item">
+                        <span>IRA:</span>
+                        <span class="emotion-value" id="ira"></span>
+                    </div>
+                    <div class="emotion-item">
+                        <span>ASCO:</span>
+                        <span class="emotion-value" id="asco"></span>
+                    </div>
+                    <div class="emotion-item">
+                        <span>MIEDO:</span>
+                        <span class="emotion-value" id="miedo"></span>
+                    </div>
+                    <div class="emotion-item">
+                        <span>ALEGRÍA:</span>
+                        <span class="emotion-value" id="alegria"></span>
+                    </div>
+                    <div class="emotion-item">
+                        <span>TRISTEZA:</span>
+                        <span class="emotion-value" id="tristeza"></span>
+                    </div>
+                    <div class="emotion-item">
+                        <span>SORPRESA:</span>
+                        <span class="emotion-value" id="sorpresa"></span>
+                    </div>
+                </div>
+                <p class="predominant-emotion">
+                    La emoción que predomina en el texto es <span id="emotion-name">___</span> con un <span id="emotion-percentage">__</span>%.
+                </p>
+            </div>
+        </main>
+
+        <footer>
+            <button class="footer-btn history-btn">
+                <img src="{% static 'img/history.png' %}" alt="Historial">
+            </button>
+            <button class="footer-btn favorite-btn">
+                <img src="{% static 'img/star.png' %}" alt="Favoritos">
+            </button>
+        </footer>
+
+        <div class="warning-message">
+            <img src="{% static 'img/warning.png' %}" alt="Advertencia">
+            <p>Debido a por las políticas a la que puede estar sujeta la red social sólo se puede seleccionar el texto.</p>
+        </div>
+    </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
